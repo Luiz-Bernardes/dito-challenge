@@ -1,0 +1,17 @@
+.container-fluid.painel
+  h1 #{Point.model_name.human count: @points.count} #{t('helpers.from')} #{@user.name}
+  hr
+  h3 #{t('helpers.total_points')} : #{calc_points(@user)}
+  hr
+  table.table.datatables
+    thead.thead-dark
+      tr
+        th scope="col"  = t('attributes.score')
+        th scope="col"  = t('attributes.score_date')
+        th scope="col"  = t('helpers.actions') 
+    tbody
+      - @points.each do |point|
+        tr
+          th = point.score
+          td = point.formatted_date
+          td = button_to t('helpers.cancel') , users_path, method: :get, class: 'btn btn-primary'

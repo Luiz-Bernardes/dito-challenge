@@ -1,0 +1,22 @@
+.container-fluid.painel
+  h1 = User.model_name.human count: @users.count
+  hr
+  = button_to t('helpers.points') , points_path, method: :get, class: 'btn btn-default'
+  hr
+  table.table.datatables
+    thead.thead-dark
+      tr
+        th scope="col"  = t('attributes.code')
+        th scope="col"  = t('attributes.name')
+        th scope="col"  = t('attributes.score')
+        th scope="col"  = t('attributes.created_at')
+        th scope="col"  = t('helpers.actions') 
+    tbody
+      - @users.each do |user|
+        tr
+          th = user.code
+          td = user.name
+          td = calc_points(user)
+          td = user.formatted_datetime
+          td 
+            = button_to t('helpers.historic') , historic_path(user), method: :get, class: 'btn btn-primary'

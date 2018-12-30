@@ -1,0 +1,18 @@
+.container-fluid.painel
+  h1 #{t('helpers.all')} #{Point.model_name.human count: @points.count}
+  hr
+  table.table.datatables
+    thead.thead-dark
+      tr
+        th scope="col"  = t('attributes.score')
+        th scope="col"  = t('attributes.score_date')
+        th scope="col"  = t('attributes.user')
+        th scope="col"  = t('helpers.actions') 
+    tbody
+      - @points.each do |point|
+        tr
+          th = point.score
+          td = point.formatted_date
+          td = point.name
+          td 
+            = button_to t('helpers.historic') , historic_path(point.user), method: :get, class: 'btn btn-primary'

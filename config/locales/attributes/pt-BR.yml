@@ -1,0 +1,10 @@
+pt-BR: 
+  attributes:
+      user: Usuário
+      name: Nome
+      code: Código
+      score: Quantidade de Pontos
+      score_date: Data
+      user_id: Usuário
+      created_at: Criado em
+      updated_at: Atualizado em

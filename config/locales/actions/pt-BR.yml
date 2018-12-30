@@ -1,0 +1,14 @@
+pt-BR:
+  helpers:
+    actions: Ações 
+    description: Descrição 
+    cancel:  Voltar
+    new:     Novo
+    edit:    Editar
+    destroy: Deletar
+    show:    Mostrar
+    historic: Histórico
+    all: Todos os
+    from: de
+    points: Pontos
+    total_points: Total de pontos
